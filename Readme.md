@@ -1,16 +1,17 @@
 
 FitBuddy: Gym Exercise & Calorie Tracker
 
-
-
 🧠 Project Idea & Description
-FitBuddy is a fitness web application made mainly for desktop users. It helps people track their daily workouts, exercises, and calories burned. The goal is to help users stay consistent with their fitness journey.
 
-Users can log each exercise they do — like running, weightlifting, or yoga — and enter details such as time spent, type of workout, and how intense it was. Based on this, the app will calculate how many calories were burned.
+FitBuddy is a fitness tracking web application designed for both desktop and mobile users. It helps people stay consistent with their health goals by tracking their daily workouts and calories burned.
 
-FitBuddy will also show simple and easy-to-understand charts or stats, so users can see their progress over time. It’s like having your own digital workout tracker and calorie calculator, all in one place.
+Users can log different types of exercises — like cardio, strength training, yoga, and more — and input details such as duration, intensity, and workout type. Based on this, the app automatically calculates the calories burned.
 
-This app is perfect for gym-goers and fitness lovers who want to keep a record of their workouts and stay motivated by seeing how far they’ve come.
+The platform also features visual charts and simple stats so users can easily monitor their progress over time. It works like a personal digital fitness log, making it easier to stay motivated.
+
+FitBuddy is perfect for gym-lover and fitness lovers who want a clean, easy way to manage their fitness routines — anytime, anywhere.
+
+
 
 
 
@@ -76,4 +77,4 @@ Day 15	Final review, write README, record demo video & submit project
                         
 🛠️ Deployment       	  Vercel (Frontend), Render (Backend)
 
-🧪 Testing & CI/CD	     GitHub Actions (CI/CD), Vite Test (optional unit testing)
+🧪 Testing 	     GitHub Actions (CI/CD), Vite Test (optional unit testing)
