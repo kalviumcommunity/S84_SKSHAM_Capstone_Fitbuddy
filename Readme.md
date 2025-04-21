@@ -35,24 +35,26 @@ The project includes:
 
 The goal is to empower users to better manage their fitness journey with personalized tracking and data insights.
 
-📅 Day-by-Day Capstone Plan
+## 📅 4-Week Capstone Plan – FitBuddy
 
-Day	Plan
-Day 1	Set up GitHub repo, README file, and folder structure for frontend & backend
-Day 2	Initialize React frontend with Vite + Tailwind CSS; build landing & login pages
-Day 3	Create reusable UI components (Navbar, Cards, Buttons) and landing layout
-Day 4	Build Sign Up and Login forms with validation (React Hook Form + Yup)
-Day 5	Set up Express.js backend and MongoDB; create User & Exercise schemas
-Day 6	Build RESTful APIs for user auth and workout logs (with JWT support)
-Day 7	Connect frontend and backend; complete auth and CRUD operations
-Day 8	Build dashboard: workout input form, calorie counter UI, charts
-Day 9	Add comment system for feedback or trainer notes
-Day 10	Integrate Google OAuth login; add dark mode toggle
-Day 11	Polish UI with animations (Framer Motion), shadcn/ui, and responsiveness
-Day 12	Create admin panel to manage users and workouts
-Day 13	Write tests, fix bugs, and perform end-to-end validation
-Day 14	Deploy frontend (Vercel) and backend (Render); verify all routes
-Day 15	Final review, write README, record demo video & submit project
+| **Day** | **Plan** |
+|--------|---------|
+| **Day 1** | Set up GitHub repo, README file, and folder structure for frontend & backend |
+| **Day 2** | Initialize React frontend with Vite + Tailwind CSS; build landing & login pages |
+| **Day 3** | Create reusable UI components (Navbar, Cards, Buttons); design landing layout |
+| **Day 4** | Build Sign Up and Login forms with validation (React Hook Form + Yup) |
+| **Day 5** | Set up Express.js backend and MongoDB; create User & Exercise schemas |
+| **Day 6** | Build RESTful APIs for user auth and workout logs (JWT-based) |
+| **Day 7** | Connect frontend and backend; complete auth & basic CRUD operations |
+| **Day 8** | Build dashboard with workout input, calorie counter, and progress charts |
+| **Day 9** | Add comment system for feedback or trainer notes |
+| **Day 10** | Integrate Google OAuth login and implement dark mode toggle |
+| **Day 11** | Polish UI using Framer Motion animations, shadcn/ui, and mobile responsiveness |
+| **Day 12** | Create admin panel to manage users, workouts, and comments |
+| **Day 13** | Write basic tests, fix bugs, and run end-to-end validation |
+| **Day 14** | Deploy frontend (Vercel) & backend (Render); test production build |
+| **Day 15** | Final review, prepare demo video, submit GitHub link and documentation |
+
 
 
 
