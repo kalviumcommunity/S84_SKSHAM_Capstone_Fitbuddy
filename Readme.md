@@ -63,7 +63,9 @@ The goal is to empower users to better manage their fitness journey with persona
 
 
 
-🚀 Technologies Used
+🚀 Technologies Used ->
+
+
 
 🗂️ Category	        ⚙️ Tech Stack
 
