@@ -1,5 +1,5 @@
-const express = require('express');
 require('dotenv').config();
+const express = require('express');
 const app = express();
 const connectedToDb = require('./db');
 const Port = process.env.PORT || 5000;
@@ -11,7 +11,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(Port,() => {
-
 console.log(`Port is listening at http://localhost:${Port}`);
     
 });
