@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
 const Workout = require('../models/Workout'); // ✅ Added missing import
 
 // POST
@@ -21,6 +20,34 @@ router.post('/saveWorkout',async(req,res)=>{
       res.status(400).json({message: `Error creating workout`, error});
   }
 })
+
+
+// GET: All workouts
+router.get('/getWorkouts', async (req, res) => {
+  try {
+    const workouts = await Workout.find();
+    res.json(workouts);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching workouts', error: error.message });
+  }
+});
+
+
+
+
+
+// GET: One workout by ID
+router.get('/getWorkout/:id', async (req, res) => {
+  try {
+    const workout = await Workout.findById(req.params.id);
+    if (!workout) return res.status(404).json({ message: 'Workout not found' });
+
+    res.json(workout);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching workout', error: error.message });
+  }
+});
+
 
 
 
