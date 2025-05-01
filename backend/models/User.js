@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name:{
+    name:{ 
         type : String,
         required:[true , 'Name is required']
     },
@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
     },
     gender:{
         type:String,
-        enum:['male','female','other'],
+        enum:["male","female","other"],
     },
     createdAt:{
         type:Date,
@@ -29,4 +29,4 @@ const userSchema = new mongoose.Schema({
 }, {timestamps:true});
 
  
-module.exports= mongoose.model('user',userSchema);
+module.exports= mongoose.model('User',userSchema);
