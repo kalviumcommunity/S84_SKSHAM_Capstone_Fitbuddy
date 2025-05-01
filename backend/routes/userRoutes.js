@@ -5,24 +5,27 @@ const Workout = require('../models/Workout'); // ✅ Added missing import
 
 // POST
 
-router.post('/saveWorkout',async(req,res)=>{
+router.post('/saveUser', async (req, res) => {
   try {
-      const {userId,exercise,duration , caloriesBurned,date}= req.body;
-      const newWorkout = new Workout({
-          userId,
-          exercise,
-          duration,
-          caloriesBurned,
-          date
-        });
-        const saveWorkout = await  newWorkout.save();
-        res.status(201).json(saveWorkout);
+    const { name, email, password, age, gender } = req.body;
+
+    const newUser = new User({
+      name,
+      email,
+      password,
+      age,
+      gender,
+    });
+
+    const savedUser = await newUser.save();
+    res.status(201).json(savedUser);
   } catch (error) {
-      res.status(400).json({message: `Error creating workout`, error});
+    res.status(400).json({
+      message: 'Error creating user',
+      error: error.message,
+    });
   }
-})
-
-
+});
 
 
 module.exports = router;
