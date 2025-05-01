@@ -2,30 +2,23 @@ const express = require('express');
 const router = express.Router();
 const Workout = require('../models/Workout');
 
-
-
-
-
-
-// GET all workouts
-router.get('/getWorkouts', async (req, res) => {
+// POST: Create a new workout
+router.post('/saveWorkout', async (req, res) => {
   try {
-    const workouts = await Workout.find();
-    res.json(workouts); // ✅ fixed
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching workouts', error: error.message });
-  }
-});
+    const { userId, exercise, duration, caloriesBurned, date } = req.body;
 
-// GET a single workout by ID
-router.get('/getWorkout/:id', async (req, res) => {
-  try {
-    const workout = await Workout.findById(req.params.id);
-    if (!workout) return res.status(404).json({ message: 'Workout not found' });
+    const newWorkout = new Workout({
+      userId,
+      exercise,
+      duration,
+      caloriesBurned,
+      date // optional; will default to Date.now if not provided
+    });
 
-    res.json(workout); // ✅ fixed
+    const savedWorkout = await newWorkout.save();
+    res.status(201).json(savedWorkout);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching workout', error: error.message });
+    res.status(400).json({ message: 'Error creating workout', error });
   }
 });
 
