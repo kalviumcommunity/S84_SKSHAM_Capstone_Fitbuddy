@@ -24,26 +24,4 @@ router.post('/saveWorkout',async(req,res)=>{
 
 
 
-// GET: All workouts
-router.get('/getWorkouts', async (req, res) => {
-  try {
-    const workouts = await Workout.find();
-    res.json(workouts);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching workouts', error: error.message });
-  }
-});
-
-// GET: One workout by ID
-router.get('/getWorkout/:id', async (req, res) => {
-  try {
-    const workout = await Workout.findById(req.params.id);
-    if (!workout) return res.status(404).json({ message: 'Workout not found' });
-
-    res.json(workout);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching workout', error: error.message });
-  }
-});
-
 module.exports = router;
