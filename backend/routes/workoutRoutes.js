@@ -1,3 +1,7 @@
+const express = require ('express');
+const router = express.Router();
+const User = require('../models/User');
+
 // POST a new workout
 
 router.post('/saveWorkout',async(req,res)=>{
@@ -16,9 +20,6 @@ router.post('/saveWorkout',async(req,res)=>{
         res.status(400).json({message: `Error creating workout`, error});
     }
 })
-const express = require ('express');
-const router = express.Router();
-const User = require('../models/User');
 
 
 

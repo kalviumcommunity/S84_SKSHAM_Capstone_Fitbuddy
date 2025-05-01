@@ -4,9 +4,9 @@ const Workout = require('../models/Workout');
 
 // post new user 
 
-router.post('/save', async(req,res)=>{
+router.post('/saveUser', async(req,res)=>{
     try {
-        const {name,email,password,age,gender} =req.body;
+        const {name,email,password,gender} =req.body;
         const newUser = new User({
             name,
             email,
