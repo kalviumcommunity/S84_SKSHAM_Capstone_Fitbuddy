@@ -22,7 +22,6 @@ router.post('/saveWorkout',async(req,res)=>{
 })
 
 
-
 // GET: All workouts
 router.get('/getWorkouts', async (req, res) => {
   try {
@@ -32,6 +31,10 @@ router.get('/getWorkouts', async (req, res) => {
     res.status(500).json({ message: 'Error fetching workouts', error: error.message });
   }
 });
+
+
+
+
 
 // GET: One workout by ID
 router.get('/getWorkout/:id', async (req, res) => {
@@ -44,5 +47,8 @@ router.get('/getWorkout/:id', async (req, res) => {
     res.status(500).json({ message: 'Error fetching workout', error: error.message });
   }
 });
+
+
+
 
 module.exports = router;
