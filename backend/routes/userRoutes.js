@@ -1,11 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const Workout = require('../models/Workout');
+const User = require('../models/User'); // Import the User model
 
+// POST: Create a new user
+router.post('/saveUser', async (req, res) => {
+  try {
+    const { name, email, password, age, gender } = req.body;
 
+    const newUser = new User({
+      name,
+      email,
+      password,
+      age,
+      gender,
+    });
 
-
-
+    const savedUser = await newUser.save();
+    res.status(201).json(savedUser);
+  } catch (error) {
+    res.status(400).json({
+      message: 'Error creating user',
+      error: error.message,
+    });
+  }
+});
 
 // GET: All users
 router.get('/getUsers', async (req, res) => {
@@ -35,4 +53,5 @@ router.get('/getUser/:id', async (req, res) => {
     });
   }
 });
-module.exports= router
+
+module.exports = router;
