@@ -1,55 +1,32 @@
-const express = require ('express');
+const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-
-// POST a new workout
-
-router.post('/saveWorkout',async(req,res)=>{
-    try {
-        const {newId,exercise,duration , caloriesBurned,date}= req.body;
-        const newWorkout = new Workout({
-            userId,
-            exercise,
-            duration,
-            caloriesBurned,
-            date
-          });
-          const saveWorkout = await  newWorkout.save();
-          res.status(201).json(saveWorkout);
-    } catch (error) {
-        res.status(400).json({message: `Error creating workout`, error});
-    }
-})
+const Workout = require('../models/Workout');
 
 
 
 
 
 
-
-
-
-// GET all users
-
-router.get('/getUser', async(req,res)=>{
-    try{
-        const users = await User.find();
-        res.json(users);
-    } catch (error){
-        res.status(500).json({message : 'Error fetching workouts', error});
-    }
-})
-
-// GET a single user by ID
-router.get('/getUser/:id',async(req,res)=>{
+// GET all workouts
+router.get('/getWorkouts', async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
-    if(!user) returnvres.status(400).json({message: 'User not found'});
+    const workouts = await Workout.find();
+    res.json(workouts); // ✅ fixed
   } catch (error) {
-    res.status(500).json({message:`Error fetching user`,error});
-  }  
-})
+    res.status(500).json({ message: 'Error fetching workouts', error: error.message });
+  }
+});
 
+// GET a single workout by ID
+router.get('/getWorkout/:id', async (req, res) => {
+  try {
+    const workout = await Workout.findById(req.params.id);
+    if (!workout) return res.status(404).json({ message: 'Workout not found' });
 
+    res.json(workout); // ✅ fixed
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching workout', error: error.message });
+  }
+});
 
 module.exports = router;
