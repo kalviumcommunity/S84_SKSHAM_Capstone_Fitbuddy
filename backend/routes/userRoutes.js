@@ -2,7 +2,24 @@ const express = require('express');
 const router = express.Router();
 const Workout = require('../models/Workout');
 
+// post new user 
 
+router.post('/save', async(req,res)=>{
+    try {
+        const {name,email,password,age,gender} =req.body;
+        const newUser = new User({
+            name,
+            email,
+            password,
+            age,
+            gender
+        });
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+    } catch (error) {
+        res.status(400).json({message : `Error creating user`,error})
+    }
+})
 
 
 
