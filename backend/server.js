@@ -4,7 +4,8 @@ const app = express();
 const connectedToDb = require('./db');
 const Port = process.env.PORT || 5000;
 
-app.use(express.json());
+app.use(express.json()); // Required to read req.body
+
 
 
 app.use('/api/users',require('./routes/userRoutes'))

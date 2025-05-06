@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Workout = require('../models/Workout'); // ✅ Added missing import
+const Workout = require('../models/Workout'); 
 
 
 
@@ -26,7 +26,6 @@ router.post('/saveWorkout',async(req,res)=>{
 })
 
 
-
 // GET: All workouts
 router.get('/getWorkouts', async (req, res) => {
   try {
@@ -36,7 +35,6 @@ router.get('/getWorkouts', async (req, res) => {
     res.status(500).json({ message: 'Error fetching workouts', error: error.message });
   }
 });
-
 
 
 
@@ -53,6 +51,7 @@ router.get('/getWorkout/:id', async (req, res) => {
     res.status(500).json({ message: 'Error fetching workout', error: error.message });
   }
 });
+
 
 
 
@@ -78,7 +77,6 @@ router.put('/updateWorkout/:id',async(req,res)=>{
     res.status(500).json({message:'Error updating workout',error: error.message});
   }
 });
-
 
 
 
