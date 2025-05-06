@@ -2,6 +2,12 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User'); // Import the User model
 
+
+
+
+
+
+
 // POST: Create a new user
 router.post('/saveUser', async (req, res) => {
   try {
@@ -25,6 +31,12 @@ router.post('/saveUser', async (req, res) => {
   }
 });
 
+
+
+
+
+
+
 // GET: All users
 router.get('/getUsers', async (req, res) => {
   try {
@@ -37,6 +49,10 @@ router.get('/getUsers', async (req, res) => {
     });
   }
 });
+
+
+
+
 
 // GET: Single user by ID 
 router.get('/getUser/:id', async (req, res) => {
@@ -53,5 +69,36 @@ router.get('/getUser/:id', async (req, res) => {
     });
   }
 });
+
+
+
+
+
+// put or update
+
+
+router.put('/updateUser/:id', async (req, res) => {
+  const uid = req.params.id;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      uid,
+      { $set: req.body },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: `User not found` });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating user', error: error.message });
+  }
+});
+
+
+
+
+ 
 
 module.exports = router;
