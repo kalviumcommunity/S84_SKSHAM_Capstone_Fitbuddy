@@ -2,13 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/User'); // Import the User model
-
-
-
-
-
-
-
 // POST: Create a new user
 router.post('/saveUser', async (req, res) => {
   try {
