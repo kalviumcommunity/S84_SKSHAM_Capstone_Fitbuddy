@@ -46,7 +46,7 @@ router.get('/getUsers', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: 'Error fetching users',
-=======
+      
 const User = require('../models/User');
 const Workout = require('../models/Workout'); // ✅ Added missing import
 
