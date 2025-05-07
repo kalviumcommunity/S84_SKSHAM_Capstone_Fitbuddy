@@ -84,6 +84,5 @@ The goal is to empower users to better manage their fitness journey with persona
 🧪 Testing 	     GitHub Actions (CI/CD), Vite Test (optional unit testing)
 
 
-//here is my deploy link
 
 **Deploy Link:** https://s84-sksham-capstone-fitbuddy-6.onrender.com

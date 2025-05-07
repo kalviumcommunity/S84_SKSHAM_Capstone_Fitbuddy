@@ -1,12 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-// Import the User model
 const User = require('../models/User');
 
-// ==============================
-// POST: Create a new user
-// ==============================
+
 router.post('/saveUser', async (req, res) => {
   try {
     const { name, email, password, age, gender } = req.body;
@@ -43,10 +39,7 @@ router.get('/getUsers', async (req, res) => {
     });
   }
 });
-
-// ==============================
-// GET: Single user by ID
-// ==============================
+//=================================
 router.get('/getUser/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
