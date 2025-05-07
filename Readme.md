@@ -82,3 +82,6 @@ The goal is to empower users to better manage their fitness journey with persona
 🛠️ Deployment       	  Vercel (Frontend), Render (Backend)
 
 🧪 Testing 	     GitHub Actions (CI/CD), Vite Test (optional unit testing)
+
+
+**Deploy Link:**
