@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 function App() {
   return (
     <>
-    <h1>hello</h1>
+  
       <HeroSection />
       <FeatureCards />
       <CallToAction />
