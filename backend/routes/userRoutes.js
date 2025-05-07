@@ -26,7 +26,27 @@ router.post('/saveUser', async (req, res) => {
   }
 });
 
+
+
+// ==============================
+// GET: All users
+// ==============================
+router.get('/getUsers', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({
+      message: 'Error fetching users',
+      error: error.message,
+    });
+  }
+});
+
+
+//==============================
 // GET: Single user by ID 
+//==============================
 router.get('/getUser/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
