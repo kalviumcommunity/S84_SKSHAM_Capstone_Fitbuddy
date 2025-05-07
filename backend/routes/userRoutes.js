@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/User'); // Import the User model
+const user = require('../models/User'); // Import the User model
 
 
 
@@ -41,40 +41,16 @@ router.post('/saveUser', async (req, res) => {
 // GET: All users
 router.get('/getUsers', async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await ser.find();
     res.json(users);
   } catch (error) {
     res.status(500).json({
       message: 'Error fetching users',
-=======
-const User = require('../models/User');
-const Workout = require('../models/Workout'); // ✅ Added missing import
+    })
 
-// POST
-
-router.post('/saveUser', async (req, res) => {
-  try {
-    const { name, email, password, age, gender } = req.body;
-
-    const newUser = new User({
-      name,
-      email,
-      password,
-      age,
-      gender,
-    });
-
-    const savedUser = await newUser.save();
-    res.status(201).json(savedUser);
-  } catch (error) {
-    res.status(400).json({
-      message: 'Error creating user',
-      error: error.message,
-    });
   }
-});
 
-
+})
 
 
 
