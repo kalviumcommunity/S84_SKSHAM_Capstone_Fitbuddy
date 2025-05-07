@@ -13,10 +13,11 @@ router.get('/getUsers', async (req, res) => {
     res.status(500).json({
       message: 'Error fetching users',
       
-const User = require('../models/User');
-const Workout = require('../models/Workout'); // ✅ Added missing import
-
-// POST
+})
+  }
+  )}
+           
+  
 
 router.post('/saveUser', async (req, res) => {
   try {
