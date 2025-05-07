@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Workout = require('../models/Workout'); // ✅ Added missing import
+const Workout = require('../models/Workout'); 
+
+
+
+
+
 
 // POST
-
 router.post('/saveWorkout',async(req,res)=>{
   try {
       const {userId,exercise,duration , caloriesBurned,date}= req.body;
@@ -45,6 +49,32 @@ router.get('/getWorkout/:id', async (req, res) => {
     res.json(workout);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching workout', error: error.message });
+  }
+});
+
+
+
+
+
+
+
+//Put :Update Workout by ID
+router.put('/updateWorkout/:id',async(req,res)=>{
+  const wid = res.params.id;
+  try {
+    const updatedWorkout = await Workout.findByIdAndUpdate(
+      wid,
+      {$set: req.body},
+      {new: true, runValidators: true}
+    );
+    
+    if (!updatedWorkout) {
+      return res.status(404).json({ message: 'Workout not found' });
+    }
+
+    res.status(200).json(updatedWorkout);
+  } catch (error) {
+    res.status(500).json({message:'Error updating workout',error: error.message});
   }
 });
 
