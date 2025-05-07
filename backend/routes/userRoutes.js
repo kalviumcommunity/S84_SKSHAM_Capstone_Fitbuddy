@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/Ussers'); 
+const User = require('../models/User');
+const Workout = require('../models/Workout'); // ✅ Added missing import
+
 
 
 // GET: All users
@@ -12,12 +14,11 @@ router.get('/getUsers', async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: 'Error fetching users',
-      
-})
+  })
   }
-  )}
-           
-  
+})
+
+// POST
 
 router.post('/saveUser', async (req, res) => {
   try {
